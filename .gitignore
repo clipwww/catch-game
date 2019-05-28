@@ -1,0 +1,32 @@
+# Workspace
+.vscode/
+.DS_Store
+
+# Node Packages
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*x
+
+# Build
+dist/
+
+# Development
+typings/
+generate-ts-db-models/
+
+# Keys
+keys/*.json
+
+# Mocha
+mochawesome-reports/
+mochawesome-report/
+
+# run time folders
+archive-files/
+
+# config
+# env
+.env
