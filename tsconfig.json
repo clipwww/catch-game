@@ -23,7 +23,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "outDir": "./dist",
     "typeRoots": [
       "src/@types"
