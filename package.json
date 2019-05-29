@@ -4,6 +4,7 @@
   "author": "david.jian",
   "license": "MIT",
   "main": "./dist/index.js",
+  "homepage": "http://192.168.11.250:10080/david/re-catch-game.git",
   "description": "接接樂遊戲",
   "keywords": [],
   "scripts": {
