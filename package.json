@@ -1,6 +1,6 @@
 {
   "name": "@re/catch-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "david.jian",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -25,7 +25,6 @@
     "dat.gui": "^0.7.6",
     "typescript": "^3.4.3"
   },
-  
   "dependencies": {
     "@re/utilities": "^1.1.3",
     "current-device": "^0.7.2",
