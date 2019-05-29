@@ -14,13 +14,13 @@ export class BaseGame {
   /**
    * PIXI
    */
-  app: PIXI.Application; // 遊戲應用程式
-  stage: PIXI.Container; // 舞台
+  protected app: PIXI.Application; // 遊戲應用程式
+  protected stage: PIXI.Container; // 舞台
 
-  score: number = 0; // 遊戲分數
+  protected score: number = 0; // 遊戲分數
 
-  fpsArr: number[] = [];
-  eventRegistry: {
+  private fpsArr: number[] = [];
+  private eventRegistry: {
     [key: string]: Function[],
   } = {};
 
@@ -96,7 +96,7 @@ export class BaseGame {
     }
   }
 
-  watchFps(): void {
+  private watchFps(): void {
     // 查看FPS
     const fpsText = new PIXI.Text(`${this.fpsArr.length}`, {
       fontSize: 20,

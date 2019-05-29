@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 
 export class LoaderSVC {
-  loader: PIXI.Loader;
+  private loader: PIXI.Loader;
 
   get resources(): PIXI.IResourceDictionary {
     return this.loader.resources;
@@ -11,7 +11,7 @@ export class LoaderSVC {
     this.loader = new PIXI.Loader();
   }
 
-  async add(params: { name: string, url: string }[]) {
+  public async add(params: { name: string, url: string }[]) {
     return new Promise((resolve) => {
       this.loader.add(params).load(() => {
         resolve();

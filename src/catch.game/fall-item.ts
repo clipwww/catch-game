@@ -14,9 +14,11 @@ export interface FallItemMeta {
 }
 
 export class FallItem {
-  app: PIXI.Application;
-  sprite: PIXI.Sprite;
-  meta: FallItemMeta = {
+  private app: PIXI.Application;
+  private isFalling = true;
+  
+  public sprite: PIXI.Sprite;
+  public meta: FallItemMeta = {
     name: '',
     url: '',
     score: 0,
@@ -25,7 +27,7 @@ export class FallItem {
     colDenominator: 7,
     speed: 0
   };
-  isFalling = true;
+  
 
 
   get x(): number {
@@ -69,7 +71,7 @@ export class FallItem {
     this.app.ticker.add(this.handleFall, this);
   }
 
-  handleFall(): void {
+  private handleFall(): void {
     if (!this.isFalling) return;
     if (this.sprite.y >= this.app.screen.height) {
       this.remove();
@@ -78,15 +80,15 @@ export class FallItem {
     this.sprite.y += this.meta.speed;
   }
 
-  start(): void {
+  public start(): void {
     this.isFalling = true;
   }
 
-  stop(): void {
+  public stop(): void {
     this.isFalling = false;
   }
 
-  remove(): void {
+  public remove(): void {
     this.sprite.visible = false;
     this.stop();
     this.app.ticker.remove(this.handleFall, this);

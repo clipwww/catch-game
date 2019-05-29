@@ -1,4 +1,17 @@
-// import 'babel-polyfill';
 import { CatchGame as ReCatchGame, GameFlowEvent } from './catch.game'
+import { FallItemMeta, FallItem } from './catch.game/fall-item'
 
-export { ReCatchGame, GameFlowEvent };
+// 本體
+export { ReCatchGame };
+
+// Enum
+export {
+  GameFlowEvent
+}
+
+// interface | type
+type FallItemVM = FallItem;
+export {
+  FallItemMeta,
+  FallItemVM
+}

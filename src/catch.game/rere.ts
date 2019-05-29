@@ -20,20 +20,20 @@ export enum Direction {
 }
 
 export class ReRe {
-  app: PIXI.Application;
-  container: PIXI.Container;
-  directionSprite: {
+  private app: PIXI.Application;
+  public container: PIXI.Container;
+  private directionSprite: {
     [Direction.default]: PIXI.Sprite;
     [Direction.left]: PIXI.Sprite;
     [Direction.right]: PIXI.Sprite;
   };
-  currentDirection: number = Direction.default;
-  moveSpeed: number = 10;
-  rereMeta: ReReMeta;
-  isPlaying = false;
+  private currentDirection: number = Direction.default;
+  private moveSpeed: number = 10;
+  private rereMeta: ReReMeta;
+  private isPlaying = false;
 
-  $leftArrowEl: HTMLElement;
-  $rightArrowEl: HTMLElement;
+  private $leftArrowEl: HTMLElement;
+  private $rightArrowEl: HTMLElement;
 
   constructor(app: PIXI.Application, rereMeta: ReReMeta) {
     this.app = app;
@@ -48,7 +48,7 @@ export class ReRe {
     this.init();
   }
 
-  init(): void {
+  public init(): void {
     // 建立左中右圖片(精靈)
     this.directionSprite = {
       [Direction.default]: new PIXI.Sprite(loaderSVC.resources[ImageResourcesEnum.rereDefault].texture),
@@ -82,7 +82,7 @@ export class ReRe {
     this.bindEvent();
   }
 
-  bindEvent(): void {
+  private bindEvent(): void {
     /**
      * window.addEventListener和document.addEventListener區別
      * ref. https://blog.csdn.net/MLGB__NIU/article/details/79107984
@@ -108,15 +108,15 @@ export class ReRe {
     this.app.ticker.add(this.handleMovie, this)
   }
 
-  start(): void {
+  public start(): void {
     this.isPlaying = true;
   }
 
-  stop(): void {
+  public stop(): void {
     this.isPlaying = false;
   }
 
-  onKeyDown(e: KeyboardEvent | TouchEvent): void {
+  private onKeyDown(e: KeyboardEvent | TouchEvent): void {
     const keyCode = (e as KeyboardEvent).keyCode;
     switch (keyCode) {
       case 39:
@@ -155,7 +155,7 @@ export class ReRe {
     }
   }
 
-  onKeyUp(e: KeyboardEvent | TouchEvent): void {
+  private onKeyUp(e: KeyboardEvent | TouchEvent): void {
     const keyCode = (e as KeyboardEvent).keyCode;
     switch (true) {
       case keyCode === 39 && this.currentDirection === Direction.right:
@@ -181,7 +181,7 @@ export class ReRe {
     this.currentDirection = Direction.default;
   }
 
-  handleMovie(): void {
+  private handleMovie(): void {
     if (!this.isPlaying) return;
 
     for (let key in this.directionSprite) {
