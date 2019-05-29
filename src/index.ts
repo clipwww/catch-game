@@ -1,4 +1,4 @@
 // import 'babel-polyfill';
-import { CatchGame as ReCatchGame } from './catch.game'
+import { CatchGame as ReCatchGame, GameFlowEvent } from './catch.game'
 
-export { ReCatchGame  };
+export { ReCatchGame, GameFlowEvent };
