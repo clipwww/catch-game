@@ -98,6 +98,49 @@ catchGame.removeEventListener(type: string, handler: Function); // 刪除監聽�
 | countdown | 秒數有變化時<br/> 倒數或加時減時 | seconds: number (目前秒數)
 | gameover | 遊戲結束時<br/>秒數歸零 | score: number (目前分數), <br/> catchedRecords: FallItemMeta[] (遊戲中接到物品的紀錄)
 
+```typescript
+export enum GameFlowEvent {
+  /**
+   * 遊戲準備完成（圖片載入、應用程式初始化完成
+   */
+  Ready = 'ready',
+  /**
+   * 遊戲開始
+   */
+  Started = 'started',
+  /**
+   * 遊戲暫停
+   */
+  Pause = 'pause',
+  /**
+   * 遊戲繼續
+   */
+  Continue = 'continue',
+  /**
+   * 接到物品
+   */
+  Catched = 'catched',
+  /**
+   * 倒數
+   */
+  Countdown = 'countdown',
+  /**
+   * 遊戲結束
+   */
+  GameOver = 'gameover',
+}
+
+
+import { ReCatchGame, GameFlowEvent } from '@re/catch-game'
+
+const catchGame = new ReCatchGame(options)
+
+catchGame.addEventListener(GameFlowEvent.Ready, () => {
+
+})
+```
+
+
 ---
 
 # 其他
