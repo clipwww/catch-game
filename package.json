@@ -1,6 +1,6 @@
 {
   "name": "@re/catch-game",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "david.jian",
   "license": "MIT",
   "main": "./dist/index.js",

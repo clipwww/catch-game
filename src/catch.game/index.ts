@@ -34,18 +34,18 @@ export interface CatchGameConfig extends BaseGameConfig {
 
 
 export class CatchGame extends BaseGame {
-  parameters: CatchGameParameters;
-  timer = { // 計算時間用
+  private parameters: CatchGameParameters;
+  private timer = { // 計算時間用
     fallItem: 0,
     seconds: 0
   }
-  isPlaying: boolean = false; // 是否為遊玩中
+  private isPlaying: boolean = false; // 是否為遊玩中
 
 
-  rere: ReRe; // 瑞瑞
-  fallItems: FallItem[] = [] // 所有掉落物品
-  fallItemMetas: FallItemMeta[] = [] // 掉落物品種類
-  fallItemRecords: { // 掉落物品紀錄（for檢查上限
+  private rere: ReRe; // 瑞瑞
+  private fallItems: FallItem[] = [] // 所有掉落物品
+  private fallItemMetas: FallItemMeta[] = [] // 掉落物品種類
+  private fallItemRecords: { // 掉落物品紀錄（for檢查上限
     total: number;
     [key: string]: number
   } = {
@@ -55,13 +55,13 @@ export class CatchGame extends BaseGame {
         }, 0)
       }
     }
-  catchedRecords: FallItemMeta[] = [];
+  private catchedRecords: FallItemMeta[] = [];
 
-  bgm: PixiSound.Sound;
-  scorePlusSound: PixiSound.Sound;
-  scoreMinusSound: PixiSound.Sound;
-  timePlusSound: PixiSound.Sound;
-  timeMinusSound: PixiSound.Sound;
+  private bgm: PixiSound.Sound;
+  private scorePlusSound: PixiSound.Sound;
+  private scoreMinusSound: PixiSound.Sound;
+  private timePlusSound: PixiSound.Sound;
+  private timeMinusSound: PixiSound.Sound;
 
 
 
