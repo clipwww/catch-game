@@ -12,6 +12,8 @@ npm-debug.log*x
 
 # Build
 dist/
+build/
+.cache/
 
 # Development
 typings/

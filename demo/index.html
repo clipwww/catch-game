@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body,
+    #app {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background-color: #ddd;
+    }
+
+    button {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      border: 1px solid #ddd;
+      z-index: 1;
+    }
+
+    #L,
+    #R {
+      position: fixed;
+      bottom: 30px;
+      font-size: 1rem;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, .4);
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    }
+
+    #L {
+      left: 0;
+    }
+
+    #R {
+      right: 0;
+    }
+
+    #time {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    #score {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: rgba(0, 0, 0, .7);
+      padding: 5px;
+      border-radius: 10px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <span id="L">左</span>
+  <span id="R">右</span>
+  <div id="time">00:30</div>
+  <div id="score">0</div>
+  <button id="js-go">開始</button>
+
+  <script src="./index.ts"></script>
+
+</body>
+
+</html>

@@ -33,7 +33,7 @@ export class BaseGame {
       height,
       transparent: true,
       preserveDrawingBuffer: true,
-      clearBeforeRender: false,
+      clearBeforeRender: true,
     })
     document.querySelector(el).appendChild(this.app.view)
 
