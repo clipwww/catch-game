@@ -1,0 +1,19 @@
+# Node Packages
+node_modules/
+.cache
+build
+
+src/
+demo/
+
+.*.swp
+._*
+.DS_Store
+.git
+.hg
+.npmrc
+.lock-wscript
+.svn
+.wafpickle-*
+config.gypi
+CVS

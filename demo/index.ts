@@ -1,6 +1,6 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import { ReCatchGame, GameFlowEvent } from '../dist/index'
 
@@ -73,7 +73,7 @@ catchGame.addEventListener(GameFlowEvent.Catched, (item, score) => {
 
 catchGame.addEventListener(GameFlowEvent.Countdown, (seconds) => {
   console.log('countdown', seconds);
-  document.getElementById('time').innerText = moment().startOf('day').add(seconds, "seconds")
+  document.getElementById('time').innerText = dayjs().startOf('day').add(seconds, "second")
     .format("mm:ss")
 })
 

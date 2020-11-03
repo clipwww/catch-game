@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import PixiSound from 'pixi-sound'
-import moment from 'moment';
+// import dayjs from 'dayjs';
 
 import { BaseGame, BaseGameConfig } from './base.game';
 import { loaderSVC, ImageResourcesEnum } from './loader.service';
@@ -125,7 +125,7 @@ export class CatchGame extends BaseGame {
 
     this.rere.start();
     this.isPlaying = true; // 正在遊戲中
-    console.log(moment().format('HH:mm:ss'))
+    // console.log(dayjs().format('HH:mm:ss'))
     this.dispatchEvent(GameFlowEvent.Started); // 觸法遊戲開始事件
   }
 
@@ -346,7 +346,7 @@ export class CatchGame extends BaseGame {
     this.fallItems.forEach(item => item.stop()); // 停止所有物品掉落
     this.rere.stop(); // 停止瑞瑞的移動
     this.dispatchEvent(GameFlowEvent.GameOver, this.score, this.catchedRecords); // 觸發遊戲結束事件
-    console.log(moment().format('HH:mm:ss'))
+    // console.log(dayjs().format('HH:mm:ss'))
   }
 }
 

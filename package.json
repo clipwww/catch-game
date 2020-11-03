@@ -1,6 +1,6 @@
 {
   "name": "@re/catch-game",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "david.jian",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -14,7 +14,8 @@
     "prebuild": "npm run clean && npm run init",
     "build": "node_modules/typescript/bin/tsc",
     "predev": "rm -rf build && mkdir build && npm run build",
-    "dev": "cp -r demo/images build/images && cp -r demo/audio build/audio && parcel demo/index.html --out-dir=build"
+    "dev": "cp -r demo/images build/images && cp -r demo/audio build/audio && parcel demo/index.html --out-dir=build",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,13 +29,12 @@
     "@types/qrcode": "^1.3.4",
     "dat.gui": "^0.7.7",
     "parcel-bundler": "^1.12.4",
-    "typescript": "^3.9.3"
+    "typescript": "^4.0.5"
   },
   "dependencies": {
     "@re/utilities": "^1.1.11",
     "core-js": "^3.6.5",
-    "current-device": "^0.7.2",
-    "moment": "^2.26.0",
+    "dayjs": "^1.9.4",
     "pixi-sound": "^3.0.4",
     "pixi.js": "^5.2.4",
     "regenerator-runtime": "^0.13.5"
