@@ -12,7 +12,8 @@
     "clean": "rm -rf dist",
     "init": "mkdir dist",
     "prebuild": "npm run clean && npm run init",
-    "build": "node_modules/typescript/bin/tsc",
+    "build-parcel": "parcel build demo/index.html --out-dir=build --public-url https://cdn.jsdelivr.net/gh/clipwww/catch-game@gh-pages/ && cp -r demo/images build/images && cp -r demo/audio build/audio",
+    "build": "node_modules/typescript/bin/tsc && npm run build-parcel",
     "predev": "rm -rf build && mkdir build && npm run build",
     "dev": "cp -r demo/images build/images && cp -r demo/audio build/audio && parcel demo/index.html --out-dir=build",
     "prepublish": "npm run build"

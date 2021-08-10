@@ -4,6 +4,13 @@ import dayjs from 'dayjs';
 
 import { ReCatchGame, GameFlowEvent } from '../dist/index'
 
+window.addEventListener('orientationchange', () => {
+  window.location.reload();
+})
+if (!!window.orientation || window.innerHeight <  window.innerWidth) {
+  alert('請以直立手機的方式進行遊玩。')
+}
+
 const catchGame = new ReCatchGame({
   el: '#app', // 遊戲塞入位置
   width: window.innerWidth, // 遊戲寬
@@ -42,7 +49,7 @@ const catchGame = new ReCatchGame({
       timePlusUrl: './images/timePlus.png', // 減時特效圖片
     },
     sound: {
-      muted: false, // 靜音
+      muted: true, // 靜音
       backgroundUrl: './audio/mainMusic.mp3', // 背景音樂
       scorePlusUrl: '', // 加分音效
       scoreMinusUrl: '', // 減分音效
